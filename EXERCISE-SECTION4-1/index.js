@@ -88,13 +88,13 @@ for (let i = 1; i <= number5; i++) {
             star5 += ""
         } star5 += "\n"
     }
-    if (i > Math.round(number5 / 2)) {
+    if (i >= Math.round(number5 / 2)) {
         for (let j = 0; j <= i; j++) {
             star5 += "   "
         }
 
         for (let k = 0; k <= (number5 * 2 - 1) - (i * 2 + 1); k++) {
-            star5 += " *."
+            star5 += " * "
         } star5 += "\n"
     }
 
