@@ -41,3 +41,4 @@ else if (result > 0) {
     alert(`uang anda lebih ${Math.abs(result)}`)
 }
 alert("terimakasih sudah belanja")
+
