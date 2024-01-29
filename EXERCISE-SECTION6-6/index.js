@@ -10,5 +10,5 @@ const reverseWord = (words) => {
 }
 
 console.log(
-    reverseWord("Hai aku join mir")
+    reverseWord("RRQ Lemon")
 )
