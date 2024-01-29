@@ -52,13 +52,14 @@
 
 // console.log(filterData(dataSensus))
 
-const dataSensus = [
-    ["Johny", 44, "Jakarta"],
-    ["Johny", 43, "Jakarta"],
-    ["Baby", 21, "Jakarta"],
-    ["Tony", 34, "Surabaya"],
-    ["Justin", 29, "Banjarmasin"]
-]
+// const dataSensus = [
+//     ["Johny", 44, "Jakarta"],
+//     ["Johny", 43, "Jakarta"],
+//     ["Baby", 21, "Jakarta"],
+//     ["Tony", 34, "Surabaya"],
+//     ["Justin", 29, "Banjarmasin"]
+// ]
 
-console.log(dataSensus.sort())
+// console.log(dataSensus.sort())
 
+console.log("Halo halo")

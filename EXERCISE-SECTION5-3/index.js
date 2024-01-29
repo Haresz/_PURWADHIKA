@@ -37,7 +37,6 @@ if (confirm('Do you want add menus ?')) {
 
 if (confirm('Do you want delete menu?')) {
     let name = prompt('delete menu name')
-    let filter;
     let index;
     for (let i = 0; i < fruit.length; i++) {
         filter = fruit[i][0].includes(name)
@@ -47,6 +46,7 @@ if (confirm('Do you want delete menu?')) {
     menusUi.splice(index, 1)
     alert(`menus :\n${menusUi.join('')}`)
 }
+
 
 for (let i = 0; i < fruit.length; i++) {
     if (confirm(`do you want to buy ${fruit[i][0]}?`)) {
