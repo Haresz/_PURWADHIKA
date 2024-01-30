@@ -1,7 +1,7 @@
-let number = 762
+let number = 365
 
-const year = Math.floor(number / 360)
-number %= 360;
+const year = Math.floor(number / 365)
+number %= 365;
 const month = Math.floor(number / 30)
 number %= 30;
 const week = Math.floor(number / 7)
