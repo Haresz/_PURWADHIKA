@@ -62,4 +62,16 @@
 
 // console.log(dataSensus.sort())
 
-console.log("Halo halo")
+// console.log("Halo halo")
+
+const fibonacciNumber = (number) => {
+  let sum = 1;
+  let sum2 = 0;
+  for (let i = 2; i <= number; i++) {
+    sum += sum2;
+    sum2 = sum - sum2;
+  }
+  return sum;
+};
+
+console.log(fibonacciNumber(4));
