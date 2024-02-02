@@ -34,7 +34,7 @@ const convertCurrency = (currency) => {
   );
 };
 
-// convertCurrency(5000000);
+convertCurrency(5000000);
 
 const removeStringFromSearch = (word, search) => {
   return console.log(word.replace(search, ""));
