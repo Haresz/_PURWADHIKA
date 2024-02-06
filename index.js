@@ -64,14 +64,53 @@
 
 // console.log("Halo halo")
 
-const fibonacciNumber = (number) => {
-  let sum = 1;
-  let sum2 = 0;
-  for (let i = 2; i <= number; i++) {
-    sum += sum2;
-    sum2 = sum - sum2;
-  }
-  return sum;
+// const fibonacciNumber = (number) => {
+//   let sum = 1;
+//   let sum2 = 0;
+//   for (let i = 2; i <= number; i++) {
+//     sum += sum2;
+//     sum2 = sum - sum2;
+//   }
+//   return sum;
+// };
+
+// console.log(fibonacciNumber(4));
+
+let plusone = (n) => {
+  let result = [];
+  n.forEach((element) => {
+    result.push(element + 1);
+  });
+  return result;
 };
 
-console.log(fibonacciNumber(4));
+let plusIn = (n) => {
+  let result = [];
+  console.log(n.lenght, "WOI");
+  for (i = 0; i < n.length; i++) {
+    result.push(n[i] + i);
+    console.log(n[i], "WOI");
+  }
+  return result;
+};
+
+let constant = (n) => {
+  let result = [];
+  for (i = 0; i < n.length; i++) {
+    result.push(42);
+  }
+  return result;
+};
+
+var map = function (arr, fn) {
+  arr = Array.from(typeof arr == "string" ? arr.split(",") : arr);
+  let array = [];
+  for (i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+    array.push(parseInt(arr[i]));
+  }
+  console.log(array);
+  return fn(array);
+};
+
+console.log(map("1, 2, 31", plusone));
