@@ -31,8 +31,6 @@ let studentArr = [
   },
 ];
 
-let cart = [];
-
 function calculate(arr) {
   let highestScore = arr[0].score;
   let lowestScore = arr[0].score;
@@ -101,5 +99,3 @@ Pay.addCart(Table, 1);
 
 Pay.showTotal();
 console.log(Pay.checkout());
-
-array.forEach((element) => {});
