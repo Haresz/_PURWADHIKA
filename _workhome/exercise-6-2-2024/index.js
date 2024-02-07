@@ -31,6 +31,8 @@ let studentArr = [
   },
 ];
 
+let cart = [];
+
 function calculate(arr) {
   let highestScore = arr[0].score;
   let lowestScore = arr[0].score;
@@ -61,4 +63,41 @@ function calculate(arr) {
   });
 }
 
-calculate(studentArr);
+// calculate(studentArr);
+
+class Product {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+}
+
+class Transaction {
+  constructor() {
+    this.total = 0;
+    this.products = [];
+  }
+
+  addCart(product, qty) {
+    this.total += product.price * qty;
+    this.products.push({ product: product.name, qty: qty });
+  }
+
+  showTotal() {
+    console.log(`Total: $${this.total}`);
+  }
+
+  checkout() {
+    return { total: this.total, products: this.products };
+  }
+}
+
+let Chair = new Product("chair", 12);
+let Table = new Product("table", 20);
+
+let Pay = new Transaction();
+Pay.addCart(Chair, 1);
+Pay.addCart(Table, 1);
+
+Pay.showTotal();
+console.log(Pay.checkout());
