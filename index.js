@@ -76,41 +76,17 @@
 
 // console.log(fibonacciNumber(4));
 
-let plusone = (n) => {
-  let result = [];
-  n.forEach((element) => {
-    result.push(element + 1);
-  });
-  return result;
+var once = function (fn) {
+  let func = 1;
+  let arr = [];
+  return function (...args) {
+    //   return console.log(fn(args[0], args[1], args[2]));
+    console.log(args);
+  };
 };
 
-let plusIn = (n) => {
-  let result = [];
-  console.log(n.lenght, "WOI");
-  for (i = 0; i < n.length; i++) {
-    result.push(n[i] + i);
-    console.log(n[i], "WOI");
-  }
-  return result;
-};
+let fn = (a, b, c) => a + b + c;
+let onceFn = once(fn);
 
-let constant = (n) => {
-  let result = [];
-  for (i = 0; i < n.length; i++) {
-    result.push(42);
-  }
-  return result;
-};
-
-var map = function (arr, fn) {
-  arr = Array.from(typeof arr == "string" ? arr.split(",") : arr);
-  let array = [];
-  for (i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
-    array.push(parseInt(arr[i]));
-  }
-  console.log(array);
-  return fn(array);
-};
-
-console.log(map("1, 2, 31", plusone));
+onceFn(1, 2, 3); // 6
+// onceFn(2, 3, 6); // returns undefined without calling fn

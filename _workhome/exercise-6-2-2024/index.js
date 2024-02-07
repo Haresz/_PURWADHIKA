@@ -101,3 +101,5 @@ Pay.addCart(Table, 1);
 
 Pay.showTotal();
 console.log(Pay.checkout());
+
+array.forEach((element) => {});
