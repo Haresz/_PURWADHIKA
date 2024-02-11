@@ -24,3 +24,28 @@ margeData(
     { name: "Student 3", email: "student3@mail.com" },
   ]
 );
+
+var join = function (arr1, arr2) {
+  const result = {};
+
+  arr1.forEach((item) => {
+    result[item.id] = item;
+    console.log(result, "1");
+  });
+
+  arr2.forEach((item) => {
+    if (result[item.id]) {
+      result[item.id] = { ...result[item.id], ...item };
+      console.log(result, "2");
+    } else {
+      result[item.id] = item;
+    }
+  });
+  console.log(result, "3");
+  return console.log(Object.values(result));
+};
+
+join(
+  [{ id: 1, b: { b: 94 }, v: [4, 3], y: 48 }],
+  [{ id: 1, b: { c: 84 }, v: [1, 3] }]
+);
