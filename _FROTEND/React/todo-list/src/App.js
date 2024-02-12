@@ -3,42 +3,65 @@ import "./App.css";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.css";
 import TodoItem from "./componets/TodoItem";
+import Axios from "axios";
 
 class App extends React.Component {
   state = {
-    todoList: [
-      { activity: "makan", id: 1 },
-      { activity: "mandi", id: 2 },
-      { activity: "coding", id: 3 },
-      { activity: "tidur", id: 4 },
-    ],
+    todoList: [],
     inputTodo: "",
   };
 
+  fetchTodo = () => {
+    Axios.get("http://localhost:2000/todo")
+      .then((res) => {
+        this.setState({ todoList: res.data });
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+  };
+
   deleteTodo = (id) => {
-    this.setState({
-      todoList: this.state.todoList.filter((val) => {
-        return val.id !== id;
-      }),
+    Axios.delete(`http://localhost:2000/todo/${id}`)
+      .then(() => {
+        alert("Todo deleted");
+        this.fetchTodo();
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+  };
+
+  completeTodo = (id) => {
+    Axios.patch(`http://localhost:2000/todo/${id}`, {
+      complete: true,
     });
   };
 
   renderTodolist = () => {
     return this.state.todoList.map((val) => {
-      return <TodoItem todoData={val} deleteTodoHandler={this.deleteTodo} />;
+      return (
+        <TodoItem
+          todoData={val}
+          completeHandlers={this.completeTodo}
+          deleteTodoHandler={this.deleteTodo}
+        />
+      );
     });
   };
 
   addTodo = () => {
-    this.setState({
-      todoList: [
-        ...this.state.todoList,
-        {
-          activity: this.state.inputTodo,
-          id: this.state.todoList.length + 1,
-        },
-      ],
-    });
+    Axios.post("http://localhost:2000/todo", {
+      activity: this.state.inputTodo,
+      complete: false,
+    })
+      .then(() => {
+        alert("Berhasil menambahkan todo");
+        this.fetchTodo();
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
   };
 
   inputHandler = (event) => {
@@ -48,6 +71,9 @@ class App extends React.Component {
     return (
       <div className="m-5">
         <h1>Todo List</h1>
+        <button className="btn btn-info" onClick={this.fetchTodo}>
+          Get my Todo List
+        </button>
         {this.renderTodolist()}
         <div>
           <input onChange={this.inputHandler} type="text" className="mx-3" />

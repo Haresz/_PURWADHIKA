@@ -1,0 +1,25 @@
+{
+  "todo": [
+    {
+      "activity": "coding",
+      "id": "3",
+      "complete": false
+    },
+    {
+      "id": "68ab",
+      "activity": "laptopan",
+      "complete": false
+    },
+    {
+      "id": "2e9a",
+      "activity": "baca komik",
+      "complete": false
+    },
+    {
+      "id": "9fb5",
+      "activity": "nonton anime",
+      "complete": false
+    }
+  ],
+  "users": []
+}
