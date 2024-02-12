@@ -3,12 +3,12 @@
     {
       "activity": "coding",
       "id": "3",
-      "complete": false
+      "complete": true
     },
     {
       "id": "68ab",
       "activity": "laptopan",
-      "complete": false
+      "complete": true
     },
     {
       "id": "2e9a",
@@ -16,8 +16,28 @@
       "complete": false
     },
     {
-      "id": "9fb5",
-      "activity": "nonton anime",
+      "id": "21ae",
+      "activity": "Belajar axios",
+      "complete": false
+    },
+    {
+      "id": "e6f2",
+      "activity": "istirahat",
+      "complete": false
+    },
+    {
+      "id": "c653",
+      "activity": "nonton",
+      "complete": false
+    },
+    {
+      "id": "f55f",
+      "activity": "gaktau",
+      "complete": false
+    },
+    {
+      "id": "6f5e",
+      "activity": "rebahan",
       "complete": false
     }
   ],
