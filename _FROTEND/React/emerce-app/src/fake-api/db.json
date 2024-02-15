@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": "05aa",
+      "fullname": "Haresz Haris",
+      "username": "HAris",
+      "email": "haris@gmail.com",
+      "password": "password",
+      "role": "user"
+    },
+    {
+      "id": "eb3f",
+      "fullname": "Haresz",
+      "username": "wisata",
+      "email": "rizalfikri852@gmail.com",
+      "password": "161518",
+      "role": "user"
+    },
+    {
+      "id": "1277",
+      "fullname": "MUHAMMAD HARIS AL FIKRI",
+      "username": "Haresz",
+      "email": "muhammadharisal259@gmail.com",
+      "password": "password",
+      "role": "user"
+    },
+    {
+      "id": "34e1",
+      "fullname": "MUHAMMAD HARIS AL FIKRI",
+      "username": "3103120146",
+      "email": "muhammadharisal259@gmail.com",
+      "password": "12131615",
+      "role": "user"
+    }
+  ],
+  "transactions": [],
+  "products": [],
+  "cart": []
+}

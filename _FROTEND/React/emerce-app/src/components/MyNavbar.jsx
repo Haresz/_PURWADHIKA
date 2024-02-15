@@ -12,15 +12,16 @@ import {
   DropdownItem,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-export default class MyNavbar extends Component {
+class MyNavbar extends Component {
   render() {
     return (
       <div>
         <Navbar color="light" light>
           <NavbarBrand>Emerce</NavbarBrand>
           <Nav>
-            <NavbarText>Hello Username</NavbarText>
+            <NavbarText>Hello {this.props.userGlobal.username}</NavbarText>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Pages
@@ -43,3 +44,11 @@ export default class MyNavbar extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    userGlobal: state.user,
+  };
+};
+
+export default connect(mapStateToProps)(MyNavbar);
