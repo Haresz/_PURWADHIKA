@@ -34,6 +34,142 @@
     }
   ],
   "transactions": [],
-  "products": [],
+  "products": [
+    {
+      "id": 1,
+      "productName": "Kaos Hitam Polos",
+      "price": 25000,
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/468563/item/goods_09_468563.jpg?width=750",
+      "description": "Ini barang bagus loh",
+      "category": "kaos"
+    },
+    {
+      "id": 2,
+      "productName": "Kaos Putih Polos",
+      "price": 23000,
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/455359/item/goods_02_455359.jpg?width=750",
+      "description": "Ini barang bagus banget loh",
+      "category": "kaos"
+    },
+    {
+      "id": 3,
+      "productName": "Kaos Biru Polos",
+      "price": 50000,
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/468563/item/goods_67_468563.jpg?width=750",
+      "category": "kaos"
+    },
+    {
+      "id": 4,
+      "productName": "Kaos Ungu Polos",
+      "price": 23000,
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/468563/item/goods_76_468563.jpg?width=750",
+      "description": "Ini barang bagus banget loh",
+      "category": "kaos"
+    },
+    {
+      "id": 5,
+      "productName": "Kaos Cream Polos",
+      "price": 23000,
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/468563/sub/goods_468563_sub14.jpg?width=750",
+      "description": "Ini barang bagus banget loh",
+      "category": "kaos"
+    },
+    {
+      "id": 6,
+      "productName": "Kaos Ijo Polos",
+      "price": 23000,
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/455359/item/goods_57_455359.jpg?width=750",
+      "description": "Ini barang bagus banget loh",
+      "category": "kaos"
+    },
+    {
+      "id": 7,
+      "productName": "Celana Jeans Putih",
+      "price": 23000,
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/441741/item/goods_01_441741.jpg?width=750",
+      "description": "Ini barang bagus banget loh",
+      "category": "celana"
+    },
+    {
+      "id": 8,
+      "productName": "Jeans Original",
+      "price": 23000,
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/441741/sub/goods_441741_sub14.jpg?width=750",
+      "description": "Ini barang bagus banget loh",
+      "category": "celana"
+    },
+    {
+      "id": 9,
+      "productName": "Jeans Cream Polos",
+      "price": 23000,
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/455471/sub/goods_455471_sub14.jpg?width=750",
+      "description": "Ini barang bagus banget loh",
+      "category": "celana"
+    },
+    {
+      "id": 10,
+      "productName": "Celana Cargo",
+      "price": 23000,
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/462318/sub/goods_462318_sub14.jpg?width=500",
+      "description": "Ini barang bagus banget loh",
+      "category": "celana"
+    },
+    {
+      "id": 11,
+      "productName": "Celana Cargo Lebar",
+      "price": 23000,
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/466073/item/goods_67_466073.jpg?width=750",
+      "description": "Ini barang bagus banget loh",
+      "category": "celana"
+    },
+    {
+      "id": 12,
+      "productName": "Celana Joger Hitam",
+      "price": 23000,
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/466670/item/goods_09_466670.jpg?width=750",
+      "description": "Ini barang bagus banget loh",
+      "category": "celana"
+    },
+    {
+      "id": 13,
+      "productName": "Topi Putih Polos",
+      "price": 23000,
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/469216/item/goods_01_469216.jpg?width=750",
+      "description": "Ini barang bagus banget loh",
+      "category": "aksesoris"
+    },
+    {
+      "id": 14,
+      "productName": "Topi Bucket Putih",
+      "price": 23000,
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/462252/item/goods_01_462252.jpg?width=750",
+      "description": "Ini barang bagus banget loh",
+      "category": "aksesoris"
+    },
+    {
+      "id": 15,
+      "productName": "Topi Bucket Hitam",
+      "price": 23000,
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/462252/item/goods_09_462252.jpg?width=750",
+      "description": "Ini barang bagus banget loh",
+      "category": "aksesoris"
+    },
+    {
+      "id": 16,
+      "productName": "Kacamata Boston",
+      "price": 23000,
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/463717/item/goods_06_463717.jpg?width=750",
+      "description": "Ini barang bagus banget loh",
+      "category": "aksesoris"
+    },
+    {
+      "id": 17,
+      "productName": "Sandal Modis",
+      "price": 23000,
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/466779/item/goods_09_466779.jpg?width=750",
+      "description": "Ini barang bagus banget loh",
+      "category": "aksesoris"
+    }
+  ],
   "cart": []
 }
