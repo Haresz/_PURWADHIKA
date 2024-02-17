@@ -12,6 +12,7 @@ export default class Home extends Component {
     itemPerPage: 5,
     searchProductName: "",
     searchCategory: "",
+    sortBy: "",
   };
 
   fetchProduct = () => {
@@ -30,7 +31,34 @@ export default class Home extends Component {
 
   renderProduct = () => {
     const beginingIndex = (this.state.page - 1) * this.state.itemPerPage;
-    const currentData = this.state.filterProductList.slice(
+    let rawData = [...this.state.filterProductList];
+    const compareString = (a, b) => {
+      if (a.productName < b.productName) {
+        return -1;
+      }
+      if (a.productName > b.productName) {
+        return 1;
+      }
+      return 0;
+    };
+    switch (this.state.sortBy) {
+      case "lowPrice":
+        rawData.sort((a, b) => a.price - b.price);
+        break;
+      case "highPrice":
+        rawData.sort((a, b) => b.price - a.price);
+        break;
+      case "az":
+        rawData.sort(compareString);
+        break;
+      case "za":
+        rawData.sort((a, b) => compareString(b, a));
+        break;
+      default:
+        rawData = [...this.state.filterProductList];
+        break;
+    }
+    const currentData = rawData.slice(
       beginingIndex,
       beginingIndex + this.state.itemPerPage
     );
@@ -51,7 +79,7 @@ export default class Home extends Component {
     }
   };
 
-  searchInputHandler = (event) => {
+  inputHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     this.setState({
@@ -63,7 +91,7 @@ export default class Home extends Component {
     this.fetchProduct();
   }
 
-  searchButtonHandler = () => {
+  searchBtnHandler = () => {
     const filterProductList = this.state.productList.filter((val) => {
       return (
         val.productName
@@ -95,11 +123,11 @@ export default class Home extends Component {
                   name="searchProductName"
                   type="text"
                   className="form-control mb-3"
-                  onChange={this.searchInputHandler}
+                  onChange={this.inputHandler}
                 />
                 <label htmlFor="searchCategory">Product Category</label>
                 <select
-                  onChange={this.searchInputHandler}
+                  onChange={this.inputHandler}
                   name="searchCategory"
                   className="form-control"
                 >
@@ -109,7 +137,7 @@ export default class Home extends Component {
                   <option value="aksesoris">Aksesoris</option>
                 </select>
                 <button
-                  onClick={this.searchButtonHandler}
+                  onClick={this.searchBtnHandler}
                   className="btn btn-primary mt-3"
                 >
                   Search
@@ -121,13 +149,13 @@ export default class Home extends Component {
                 <strong>Sort Products</strong>
               </div>
               <div className="card-body">
-                <label htmlFor="searchCategory">Sort by</label>
-                <select name="searchCategory">
+                <label htmlFor="sortBy">Sort by</label>
+                <select onChange={this.inputHandler} name="sortBy">
                   <option value="">Default</option>
-                  <option value="">Lowest Price</option>
-                  <option value="">Highest Price</option>
-                  <option value="">A-Z</option>
-                  <option value="">Z-A</option>
+                  <option value="lowPrice">Lowest Price</option>
+                  <option value="highPrice">Highest Price</option>
+                  <option value="az">A-Z</option>
+                  <option value="za">Z-A</option>
                 </select>
               </div>
             </div>
