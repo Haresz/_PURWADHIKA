@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import ProductCart from "../components/ProductCart";
 import Axios from "axios";
 import { API_URL } from "../constants/API";
+import { connect } from "react-redux";
 
-export default class Home extends Component {
+class Home extends Component {
   state = {
     productList: [],
     filterProductList: [],
@@ -193,3 +194,11 @@ export default class Home extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    userGlobal: state.user,
+  };
+};
+
+export default connect(mapStateToProps)(Home);

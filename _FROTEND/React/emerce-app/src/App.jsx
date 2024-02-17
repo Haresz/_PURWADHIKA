@@ -14,6 +14,7 @@ import MyNavbar from "./components/MyNavbar";
 
 import { connect } from "react-redux";
 import { userKeepLogin, checkStorage } from "./redux/action/user";
+import { getCartData } from "./redux/action/cart";
 
 class App extends Component {
   componentDidMount() {
@@ -22,6 +23,7 @@ class App extends Component {
     if (userLocalStorage) {
       const userData = JSON.parse(userLocalStorage);
       this.props.userKeepLogin(userData);
+      this.props.getCartData(userData.id);
     } else {
       this.props.checkStorage();
     }
@@ -39,7 +41,10 @@ class App extends Component {
               <Route Component={Admin} path="/admin" />
               <Route Component={Cart} path="/cart" />
               <Route Component={History} path="/history" />
-              <Route Component={ProductDetail} path="/product-detail" />
+              <Route
+                Component={ProductDetail}
+                path="/product-detail/:productId"
+              />
             </Routes>
           </BrowserRouter>
         </>
@@ -59,6 +64,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   userKeepLogin,
   checkStorage,
+  getCartData,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
