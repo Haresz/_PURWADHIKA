@@ -5,16 +5,44 @@ import { connect } from "react-redux";
 import { getCartData } from "../redux/action/cart";
 
 class Cart extends Component {
+  state = {
+    isCheckoutMode: false,
+    recipientName: "",
+    address: "",
+    payment: 0,
+  };
+
   deleteCartHandler(cartId) {
     Axios.delete(`${API_URL}cart/${cartId}`)
       .then(() => {
-        alert(`Cart deleted`);
         this.props.getCartData(this.props.userGlobal.id);
       })
       .catch((err) => {
         alert(err.message);
       });
   }
+
+  checkoutModeToggle = () => {
+    this.setState({ isCheckoutMode: !this.state.isCheckoutMode });
+  };
+
+  renderSubTotalPrice = () => {
+    let subTotal = 0;
+    for (let i = 0; i < this.props.cartGlobal.cartList.length; i++) {
+      subTotal +=
+        this.props.cartGlobal.cartList[i].price *
+        this.props.cartGlobal.cartList[i].quantity;
+    }
+    return subTotal;
+  };
+
+  renderTaxFee = () => {
+    return this.renderSubTotalPrice() * 0.05;
+  };
+
+  renderTotalPrice = () => {
+    return this.renderSubTotalPrice() + this.renderTaxFee();
+  };
 
   renderCart() {
     return this.props.cartGlobal.cartList.map((cart) => {
@@ -40,14 +68,57 @@ class Cart extends Component {
       );
     });
   }
+
+  inputHandler = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
+
+  payButtonHandler = () => {
+    if (this.state.payment < this.renderTotalPrice()) {
+      alert("Payment lowered");
+      return;
+    }
+    const d = new Date();
+    const funPay = () =>
+      Axios.post(`${API_URL}transactions`, {
+        userID: this.props.userGlobal.id,
+        recipientName: this.state.recipientName,
+        address: this.state.address,
+        totalPrice: parseInt(this.renderTotalPrice()),
+        totalPayment: parseInt(this.state.payment),
+        transactionsDate: `${d.getDate()} - ${d.getMonth()} - ${d.getFullYear()}`,
+        transactionItem: this.props.cartGlobal.cartList,
+      })
+        .then((res) => {
+          alert(`payment successful`);
+          res.data.transactionItem.forEach((val) => {
+            this.deleteCartHandler(val.id);
+          });
+        })
+        .catch((err) => {
+          alert(err.message);
+        });
+
+    if (this.state.payment > this.renderTotalPrice()) {
+      alert(
+        "Payment higher your changes " +
+          (this.state.payment - this.renderTotalPrice())
+      );
+      funPay();
+    } else if (this.state.payment == this.renderTotalPrice()) {
+      funPay();
+    }
+  };
+
   render() {
     return (
-      <div className="p-5">
+      <div className="p-5 text-center">
+        <h1>Cart</h1>
         <div className="row">
-          <div className="col-12 text-center">
-            <h1>Cart</h1>
+          <div className="col-9 text-center">
             <table className="table mt-4">
-              <thead className="thead-light">
+              <thead className="table-secondary">
                 <tr>
                   <th>Name</th>
                   <th>Price</th>
@@ -60,11 +131,73 @@ class Cart extends Component {
               <tbody>{this.renderCart()}</tbody>
               <tfoot>
                 <tr colSpan="6">
-                  <button className="btn btn-success">Checkout</button>
+                  <button
+                    className="btn btn-success"
+                    onClick={this.checkoutModeToggle}
+                  >
+                    Checkout
+                  </button>
                 </tr>
               </tfoot>
             </table>
           </div>
+          {this.state.isCheckoutMode ? (
+            <div className="col-3 mt-4">
+              {/* Form Checkout */}
+              <div className="card text-start">
+                <div className="card-header">
+                  <strong>Order summary</strong>
+                </div>
+                <div className="card-body">
+                  <div className="d-flex my-2 flex-row justify-content-between alig-items-center">
+                    <span className="fw-bold">Subtotal Price</span>
+                    <span>Rp. {this.renderSubTotalPrice()}</span>
+                  </div>
+                  <div className="d-flex my-2 flex-row justify-content-between alig-items-center">
+                    <span className="fw-bold">Tax Fee(5%)</span>
+                    <span>Rp. {this.renderTaxFee()}</span>
+                  </div>
+                  <div className="d-flex my-2 flex-row justify-content-between alig-items-center">
+                    <span className="fw-bold">Total Price</span>
+                    <span>Rp. {this.renderTotalPrice()}</span>
+                  </div>
+                </div>
+                <div className="card-body border-top">
+                  <label htmlFor="recipientName">Rcipient Name</label>
+                  <input
+                    onChange={this.inputHandler}
+                    type="text"
+                    className="form-control mb-3"
+                    name="recipientName"
+                  />
+                  <label htmlFor="address">Address</label>
+                  <input
+                    onChange={this.inputHandler}
+                    type="text"
+                    className="form-control"
+                    name="address"
+                  />
+                </div>
+                <div className="card-footer">
+                  <div className="d-flex flex-row justify-content-between aalign-items-center">
+                    <input
+                      onChange={this.inputHandler}
+                      className="form-control"
+                      type="number"
+                      name="payment"
+                    />
+                    <button
+                      className="btn btn-success mx-1"
+                      onClick={this.payButtonHandler}
+                    >
+                      {" "}
+                      Pay{" "}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
     );

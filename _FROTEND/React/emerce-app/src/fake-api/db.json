@@ -33,7 +33,95 @@
       "role": "user"
     }
   ],
-  "transactions": [],
+  "transactions": [
+    {
+      "id": "adc3",
+      "userID": "eb3f",
+      "recipientName": "Wisa",
+      "address": "KATAN",
+      "totalPrice": 48300,
+      "totalPayment": 48300,
+      "transactionsDate": "17 - 1 - 2024",
+      "transactionItem": [
+        {
+          "id": "2c10",
+          "userId": "eb3f",
+          "productId": "5",
+          "price": 23000,
+          "productName": "Kaos Cream Polos",
+          "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/468563/sub/goods_468563_sub14.jpg?width=750",
+          "quantity": 1
+        },
+        {
+          "id": "cbe5",
+          "userId": "eb3f",
+          "productId": "17",
+          "price": 23000,
+          "productName": "Sandal Modis",
+          "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/466779/item/goods_09_466779.jpg?width=750",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "3abd",
+      "userID": "eb3f",
+      "recipientName": "Wisa",
+      "address": "KATAN",
+      "totalPrice": 48300,
+      "totalPayment": 448300,
+      "transactionsDate": "17 - 1 - 2024",
+      "transactionItem": [
+        {
+          "id": "2c10",
+          "userId": "eb3f",
+          "productId": "5",
+          "price": 23000,
+          "productName": "Kaos Cream Polos",
+          "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/468563/sub/goods_468563_sub14.jpg?width=750",
+          "quantity": 1
+        },
+        {
+          "id": "cbe5",
+          "userId": "eb3f",
+          "productId": "17",
+          "price": 23000,
+          "productName": "Sandal Modis",
+          "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/466779/item/goods_09_466779.jpg?width=750",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "f7d8",
+      "userID": "eb3f",
+      "recipientName": "Wisa",
+      "address": "KATAN",
+      "totalPrice": 48300,
+      "totalPayment": 448300,
+      "transactionsDate": "17 - 1 - 2024",
+      "transactionItem": [
+        {
+          "id": "2c10",
+          "userId": "eb3f",
+          "productId": "5",
+          "price": 23000,
+          "productName": "Kaos Cream Polos",
+          "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/468563/sub/goods_468563_sub14.jpg?width=750",
+          "quantity": 1
+        },
+        {
+          "id": "cbe5",
+          "userId": "eb3f",
+          "productId": "17",
+          "price": 23000,
+          "productName": "Sandal Modis",
+          "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/466779/item/goods_09_466779.jpg?width=750",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
   "products": [
     {
       "id": "1",
@@ -179,33 +267,5 @@
       "category": "kaos"
     }
   ],
-  "cart": [
-    {
-      "id": "043e",
-      "userId": "eb3f",
-      "productId": "3",
-      "price": 50000,
-      "productName": "Kaos Biru Polos",
-      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/468563/item/goods_67_468563.jpg?width=750",
-      "quantity": 1
-    },
-    {
-      "id": "2c10",
-      "userId": "eb3f",
-      "productId": "5",
-      "price": 23000,
-      "productName": "Kaos Cream Polos",
-      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/468563/sub/goods_468563_sub14.jpg?width=750",
-      "quantity": 1
-    },
-    {
-      "id": "cbe5",
-      "userId": "eb3f",
-      "productId": "17",
-      "price": 23000,
-      "productName": "Sandal Modis",
-      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/466779/item/goods_09_466779.jpg?width=750",
-      "quantity": 1
-    }
-  ]
+  "cart": []
 }
