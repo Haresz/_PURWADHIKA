@@ -18,3 +18,4 @@ function countWaysToReachTop(n) {
 }
 
 console.log(countWaysToReachTop(1));
+console.log(countWaysToReachTop(1));
