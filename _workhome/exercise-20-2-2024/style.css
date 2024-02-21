@@ -1,0 +1,32 @@
+.container {
+  border: solid 1px black;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  border: solid 3px black;
+  padding: 8px 28px;
+}
+
+table,
+tr,
+td {
+  border: solid 1px black;
+  border-collapse: collapse;
+}
+
+table {
+  background-color: coral;
+}
+
+td {
+  padding: 8px;
+}
+
+thead td {
+  font-weight: bold;
+}
