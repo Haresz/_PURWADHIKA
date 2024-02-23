@@ -250,3 +250,6 @@
 // compactObject([null, 0, 5, [0], [false, 16]]);
 // compactObject([-1, 0, [0, false], true, null]);
 // compactObject({ a: 1, b: 1, c: null, d: "false", e: 0 });
+
+let promise = new Promise();
+console.log(promise);

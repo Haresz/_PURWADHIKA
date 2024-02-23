@@ -1,0 +1,22 @@
+{
+  "name": "samplenpm",
+  "version": "1.0.0",
+  "description": "belajar npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Haresz/_PURWADHIKA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Haresz/_PURWADHIKA/issues"
+  },
+  "homepage": "https://github.com/Haresz/_PURWADHIKA#readme",
+  "dependencies": {
+    "json-stable-stringify": "^1.1.1"
+  }
+}
