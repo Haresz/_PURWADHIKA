@@ -251,5 +251,56 @@
 // compactObject([-1, 0, [0, false], true, null]);
 // compactObject({ a: 1, b: 1, c: null, d: "false", e: 0 });
 
-let promise = new Promise();
-console.log(promise);
+// let promise = new Promise();
+// console.log(promise);
+
+// var timeLimit = function (fn, t) {
+//   return async function (...args) {
+//     const start = new Date();
+//     let result;
+
+//     try {
+//       result = await Promise.race([
+//         fn(...args),
+//         new Promise((_, reject) => setTimeout(() => reject("Timeout"), t)),
+//       ]);
+//     } catch (err) {
+//       result = { rejected: err, time: t };
+//     }
+
+//     const end = new Date();
+//     result.time = end - start;
+//     if (typeof result.resolved == "object") {
+//       result = result.resolved;
+//     }
+//     return console.log(result);
+//   };
+// };
+
+// const limited = async (n) => {
+//   await new Promise((res) => setTimeout(res, 100));
+//   return n * n;
+// };
+// limited(150).catch(console.log); // "Time Limit Exceeded" at t=100ms
+
+function solution(str, ending) {
+  str = str.split("");
+  ending = ending.split("");
+  let result = true;
+  if (str.length > ending.length) {
+    (str = str.reverse().filter((v, i) => i <= ending.length - 1)).reverse();
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] == ending[i]) {
+        result = true;
+      } else {
+        result = false;
+        break;
+      }
+    }
+  } else {
+    result = false;
+  }
+  return result;
+}
+
+console.log(solution("ails", "fails"));
