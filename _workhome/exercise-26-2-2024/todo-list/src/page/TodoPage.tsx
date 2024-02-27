@@ -1,10 +1,19 @@
 import { Stack } from "@chakra-ui/react";
 import Form from "../component/Form";
 import Todo from "../component/Todo";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ITodos from "../interface/ITodo";
 
 export default function TodoPage() {
   const [TodoList, setTodoList] = useState([]);
+
+  useEffect(() => {
+    let storage: any = localStorage.getItem("TODOS");
+    if (storage) {
+      storage = JSON.parse(storage);
+      setTodoList(storage);
+    }
+  }, []);
   return (
     <Stack
       spacing={8}
@@ -13,7 +22,14 @@ export default function TodoPage() {
       borderColor="gray.200"
     >
       <h1 className="font-bold text-xl mt-4">My Todo</h1>
-      <Todo />
+      {TodoList.map((todo: ITodos) => (
+        <Todo
+          key={todo.id}
+          id={todo.id}
+          title={todo.title}
+          done={todo.complate}
+        />
+      ))}
       <Form />
     </Stack>
   );
