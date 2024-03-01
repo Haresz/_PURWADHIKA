@@ -1,27 +1,12 @@
 import { Box, Button, Checkbox, Text } from "@chakra-ui/react";
 import { MdDelete } from "react-icons/md";
-import ITodos from "../interface/ITodo";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../app/store";
+import { deleteTodo, doneTodo } from "../app/features/TodoSlice";
 
 export default function Todo(props: any) {
-  let storage: any = localStorage.getItem("TODOS");
-  let datas = JSON.parse(storage);
-
-  const handleDeleteTodo = (id: string) => {
-    let index = datas.findIndex((todo: ITodos) => todo.id === id);
-    console.log(index);
-    datas.splice(index, 1);
-    localStorage.setItem("TODOS", JSON.stringify(datas));
-    alert("TODO deleted");
-    location.reload();
-  };
-
-  const handleComplateTodo = (id: string) => {
-    let index = datas.findIndex((todo: ITodos) => todo.id === id);
-    datas[index].complate = !datas[index].complate;
-    localStorage.setItem("TODOS", JSON.stringify(datas));
-    console.log(id, index);
-    location.reload();
-  };
+  const Todos = useSelector((state: RootState) => state.todo.todos);
+  const dispact = useDispatch();
 
   return (
     <Box
@@ -33,7 +18,7 @@ export default function Todo(props: any) {
     >
       <div className="flex items-center">
         <Checkbox
-          onChange={() => handleComplateTodo(props.id)}
+          onChange={() => dispact(doneTodo(props.id))}
           isChecked={props.done}
           size="lg"
           colorScheme="green"
@@ -44,7 +29,7 @@ export default function Todo(props: any) {
       </div>
 
       <Button
-        onClick={() => handleDeleteTodo(props.id)}
+        onClick={() => dispact(deleteTodo(props.id))}
         colorScheme="red"
         variant="outline"
       >

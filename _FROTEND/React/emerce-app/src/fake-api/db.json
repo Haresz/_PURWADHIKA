@@ -325,5 +325,24 @@
       "category": "kaos"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "af8e",
+      "userId": "eb3f",
+      "productId": "1",
+      "price": 25000,
+      "productName": "Kaos Hitam Polos",
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/468563/item/goods_09_468563.jpg?width=750",
+      "quantity": 4
+    },
+    {
+      "id": "917e",
+      "userId": "eb3f",
+      "productId": "2",
+      "price": 23000,
+      "productName": "Kaos Putih Polos",
+      "productImage": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/455359/item/goods_02_455359.jpg?width=750",
+      "quantity": 4
+    }
+  ]
 }
