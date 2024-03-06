@@ -11,7 +11,6 @@ import {
   Th,
   Tbody,
   Td,
-  Tfoot,
 } from "@chakra-ui/react";
 
 export default function Users() {

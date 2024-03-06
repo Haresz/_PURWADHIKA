@@ -1,11 +1,11 @@
 import { Box, Button, Checkbox, Text } from "@chakra-ui/react";
 import { MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../app/store";
+// import { RootState } from "../app/store";
 import { deleteTodo, doneTodo } from "../app/features/TodoSlice";
 
 export default function Todo(props: any) {
-  const Todos = useSelector((state: RootState) => state.todo.todos);
+  // const Todos = useSelector((state: RootState) => state.todo.todos);
   const dispact = useDispatch();
 
   return (
