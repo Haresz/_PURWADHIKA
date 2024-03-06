@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "c773f4c2-ff89-4406-ab10-408ee0859276",
+      "name": "harisz",
+      "email": "user@gmail.com",
+      "password": "0987654321"
+    },
+    {
+      "id": "5d91b757-ad19-485b-80e2-c5073b8a073a",
+      "name": "harisz2",
+      "email": "user@gmail.com",
+      "password": "0987654321"
+    },
+    {
+      "id": "a12dee73-8e33-4d99-8b41-17cfc839e53f",
+      "name": "panca6",
+      "email": "user@gmail.com",
+      "password": "pancapanca"
+    },
+    {
+      "id": "b9820342-24bd-47a7-bc50-234b7cf00abe",
+      "name": "ambarr",
+      "email": "ambar@gmail.com",
+      "password": "ambarpisang"
+    },
+    {
+      "id": "82f4921b-84ac-42e5-b7ba-40e18b7815bb",
+      "name": "getto4",
+      "email": "getto@gmail.com",
+      "password": "getogeto"
+    },
+    {
+      "id": "46503b77-03dd-4640-849a-53268915724a",
+      "name": "harifx",
+      "email": "one@gmail.com",
+      "password": "12345678"
+    }
+  ]
+}
