@@ -1,7 +1,5 @@
-"use client";
-import { useParams } from "next/navigation";
+import React from "react";
 
-export default function Detail() {
-  const params = useParams<{ id: string }>();
-  return <div>Detail loh ini {params.id}</div>;
+export default function page() {
+  return <div>page</div>;
 }
