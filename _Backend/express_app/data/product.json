@@ -1,1 +1,6 @@
-[{"id":1,"nama":"Jaket","harga":130000},{"id":3,"nama":"Ikat Pinggang","harga":10000},{"id":4,"nama":"Kacamata","harga":80000},{"id":2,"nama":"Tas","harga":100000}]
+[
+  { "id": 1, "nama": "Jaket", "harga": 130000 },
+  { "id": 3, "nama": "Ikat Pinggang", "harga": 10000 },
+  { "id": 4, "nama": "Kacamata", "harga": 80000 },
+  { "id": 2, "nama": "Tas", "harga": 100000 }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "cf9ac20f-d78e-416a-a686-69e8d12e3718",
+    "name": "MAKAN MALAM",
+    "nominal": 15000,
+    "category": "MAKAN",
+    "date": "2024-01-20"
+  },
+  {
+    "id": "587b2a55-8d75-46c7-ab1e-945e87fad9f7",
+    "name": "SARAPAN",
+    "nominal": 10000,
+    "category": "MAKAN",
+    "date": "2024-02-20"
+  },
+  {
+    "id": "6c969b01-c599-4514-84cb-3f1b03bb3acf",
+    "name": "ISI BENSIN",
+    "nominal": 50000,
+    "category": "BENSIN",
+    "date": "2024-03-20"
+  },
+  {
+    "id": "98c13641-6944-4881-9cf8-e3b366a7ca1b",
+    "name": "BELI LE MINIRAL",
+    "nominal": 50000,
+    "category": "MAKAN",
+    "date": "2024-03-20"
+  }
+]
